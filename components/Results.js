@@ -14,3 +14,8 @@ const Results = () => (
     </section>
 )
 export default Results
+
+function removeAll() {
+    codes = [];
+    $("#scanned-codess").empty();
+}
