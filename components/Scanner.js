@@ -7,6 +7,14 @@ const Scanner = () => (
             <script src='/static/scanner.js'></script>
         </Head>
         <div>
+            <style jsx>
+            {`
+                .drawingBuffer {
+                    position: absolute;
+                    left: 0;
+                    }
+            `}
+            </style>
             <div>
                 <div>
                     <div id="barcode-scanner">

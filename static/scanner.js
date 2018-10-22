@@ -54,7 +54,6 @@ $(document).ready(function() {
                     Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
                 });
             }
-
             if (result.box) {
                 Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
             }
@@ -67,7 +66,10 @@ $(document).ready(function() {
 
     Quagga.onDetected(function (result) {
         if (result.codeResult.code) {
-            $("#scanned").append(`<li>${result.codeResult.code}</li>`)
+            $("#scanned").append(`<li>${result.codeResult.code}</li>`);
+            if ("vibrate" in navigator) {
+                navigator.vibrate(1000);
+            }
         }
     });
 });
