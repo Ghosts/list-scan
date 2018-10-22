@@ -1,6 +1,5 @@
+let codes = [];
 $(document).ready(function () {
-    let codes = [];
-
     var liveStreamConfig = {
         inputStream: {
             name: "Live",
@@ -9,7 +8,6 @@ $(document).ready(function () {
                 facingMode: "environment",
                 width: window.innerWidth,
                 height: window.innerHeight,
-                aspectRatio: {min: 1, max: 100},
             },
             target: document.querySelector('#barcode-scanner')
         },
@@ -68,12 +66,14 @@ $(document).ready(function () {
 
     Quagga.onDetected(function (result) {
         let code = result.codeResult.code;
-        if (result.codeResult.code && !$.inArray(code, codes)) {
+        console.log(code);
+        if (code && ($.inArray(code, codes) === -1)) {
+            console.log('hey');
             codes.push(code);
             $("#scanned-codes").append(`
-            <span class="tag is-light">
+            <span class="tag is-light is-large">
             ${code}
-            <button onClick="removeCode('${code}')" class="delete is-small"></button>
+            <button onClick="removeCode('${code}')" class="delete"></button>
             </span>
             `);
             window.navigator.vibrate(1000);
