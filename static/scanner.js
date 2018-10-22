@@ -3,7 +3,6 @@ $(document).ready(function() {
         inputStream: {
             name: "Live",
             type: "LiveStream",
-            size: 1920,
             constraints: {
                 facingMode: "environment"
             },
