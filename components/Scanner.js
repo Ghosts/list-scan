@@ -9,15 +9,13 @@ const Scanner = () => (
         <div>
             <div>
                 <div>
-                    <div id="scanner"></div>
-                    <input id="scanner_input" placeholder="Click the button to scan an EAN..." type="text" />
-                    <button id="livestream_scanner">
-                        Scan Barcodes
-                    </button>
+                    <div id="barcode-scanner">
+                        <video src=""></video>
+                        <canvas class="drawingBuffer"></canvas>
+                    </div>
                 </div>
                 <div>
                     <ul id="scanned">
-
                     </ul>
                 </div>
             </div>

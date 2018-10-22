@@ -6,7 +6,7 @@ $(document).ready(function() {
             constraints: {
                 facingMode: "environment"
             },
-            target: document.querySelector('#scanner')
+            target: document.querySelector('#barcode-scanner')
         },
         locator: {
             patchSize: "medium",
@@ -29,19 +29,17 @@ $(document).ready(function() {
         locate: true
     };
 
-    $('#livestream_scanner').on('click', function (e) {
-            Quagga.init(
-                liveStreamConfig,
-                function (err) {
-                    if (err) {
-                        console.log(err);
-                        Quagga.stop();
-                        return;
-                    }
-                    Quagga.start();
-                }
-            );
-    });
+    Quagga.init(
+        liveStreamConfig,
+        function (err) {
+            if (err) {
+                console.log(err);
+                Quagga.stop();
+                return;
+            }
+            Quagga.start();
+        }
+    );
 
     Quagga.onProcessed(function (result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
