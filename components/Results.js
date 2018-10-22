@@ -2,8 +2,14 @@ import React from 'react'
 import Quagga from 'quagga'
 
 class Results extends React.Component {
+    codes = [];
+
+    constructor(props) {
+        super(props);
+        this.scanned_codes = React.createRef();
+    }
+
     componentDidMount() {
-        let code = [];
         var liveStreamConfig = {
             inputStream: {
                 name: "Live",
@@ -72,7 +78,7 @@ class Results extends React.Component {
             let code = result.codeResult.code;
             if (code && ($.inArray(code, codes) === -1)) {
                 codes.push(code);
-                $("#scanned-codes").append(`
+                document.querySelector("#scanned-codes").appendChild(`
                     <span class="tag is-light is-large ${code}">
                     ${code}
                     <button onClick="removeCode('${code}')" class="delete"></button>
@@ -83,13 +89,11 @@ class Results extends React.Component {
         });
 
         function removeCode(code) {
-            codes.splice($.inArray(code, codes), 1);
-            $(`.${code}`).remove();
-        }
-
-        function removeAll() {
-            codes = [];
-            $("#scanned-codess").empty
+            var i = codes.indexOf(code);
+            if (i != -1) {
+                codes.splice(i, 1);
+            }
+            document.querySelector(`.${code}`).remove();
         }
     }
 
@@ -101,14 +105,23 @@ class Results extends React.Component {
                         <h1 className="title">
                             Scanned Codes
                         </h1>
-                        <div id="scanned-codes" className="tags"></div>
+                        <div id="scanned-codes" ref={this.scanned_codes} className="tags"></div>
                         <div className="subtitle remove-all">
-                            <a className="button is-rounded" onClick={removeAll()}>Remove All</a>
+                            <a className="button is-rounded" onClick={this.removeAll.bind(this)}>Remove All</a>
                         </div>
                     </div>
                 </div>
             </section>
         )
     }
+    removeAll() {
+        this.codes = [];
+        const results = this.scanned_codes.curent;
+        while (results.hasChildNodes()) {
+            results.removeChild(results.lastChild);
+        }
+    }
 }
+
+
 export default Results
