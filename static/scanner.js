@@ -7,8 +7,8 @@ $(document).ready(function () {
             type: "LiveStream",
             constraints: {
                 facingMode: "environment",
-                width: {min: 640},
-                height: {min: 480},
+                width: window.innerWidth,
+                height: window.innerHeight,
                 aspectRatio: {min: 1, max: 100},
             },
             target: document.querySelector('#barcode-scanner')
