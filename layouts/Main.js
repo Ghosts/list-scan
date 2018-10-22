@@ -11,12 +11,12 @@ const Layout = (props) => (
     <div style={layoutStyle} className="columns">
     <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="/static/bulma.min.css" type="text/stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="/static/bulma.min.css"></link>
     </Head>
-    <div className="column">
-        <h1>List-Scan</h1>
-        <Scanner />
-        {props.children}
+        <div className="column">
+            <h1>List-Scan</h1>
+            <Scanner />
+            {props.children}
         </div>
     </div>
 )

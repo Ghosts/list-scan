@@ -18,8 +18,6 @@ const Scanner = () => (
             <div>
                 <div>
                     <div id="barcode-scanner">
-                        <video src=""></video>
-                        <canvas class="drawingBuffer"></canvas>
                     </div>
                 </div>
                 <div>

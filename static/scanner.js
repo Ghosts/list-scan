@@ -16,9 +16,10 @@ $(document).ready(function () {
         },
         numOfWorkers: (window.navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 4),
         decoder: {
-            readers: ["upc_reader", "code_128_reader", "code_39_reader", "code_39_vin_reader", "ean_8_reader", "ean_reader", "upc_e_reader", "codabar_reader"]
+            readers: ["code_39_reader","code_39_vin_reader"]
         },
-        locate: true
+        locate: true,
+        multiple: true
     };
 
     Quagga.init(
