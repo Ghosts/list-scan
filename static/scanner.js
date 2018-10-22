@@ -16,14 +16,14 @@ $(document).ready(function () {
             halfSample: true
         },
         area: {
-            top: "0%",  
+            top: "0%",
             right: "0%",
-            left: "0%", 
-            bottom: "0%" 
-          },
+            left: "0%",
+            bottom: "0%"
+        },
         numOfWorkers: (window.navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 4),
         decoder: {
-            readers: ["code_39_reader","code_39_vin_reader", "code_128_reader"]
+            readers: ["code_39_reader", "code_39_vin_reader", "code_128_reader"]
         },
         locate: true,
         multiple: true
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     Quagga.onProcessed(function (result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
-        drawingCanvas = Quagga.canvas.dom.overlay;
+            drawingCanvas = Quagga.canvas.dom.overlay;
         if (result) {
             if (result.boxes) {
                 drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
@@ -71,17 +71,22 @@ $(document).ready(function () {
             console.log('hey');
             codes.push(code);
             $("#scanned-codes").append(`
-            <span class="tag is-light is-large">
+            <span class="tag is-light is-large ${code}">
             ${code}
             <button onClick="removeCode('${code}')" class="delete"></button>
             </span>
             `);
-            window.navigator.vibrate(1000);
+            window.navigator.vibrate(500);
         }
     });
-
-    function removeCode(code) {
-        codes.splice( $.inArray(code, codes), 1 );
-    }
-
 });
+
+function removeCode(code) {
+    codes.splice($.inArray(code, codes), 1);
+    $(`.${code}`).remove();
+}
+
+function removeAll() {
+    codes = [];
+    $("#scanned-codess").empty();
+}
