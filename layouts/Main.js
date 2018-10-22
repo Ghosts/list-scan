@@ -7,7 +7,6 @@ const Layout = (props) => (
     <style jsx global>{`
       body { 
         overflow-x: hidden;
-        overflow-y: hidden;
       }
     `}</style>
     <Head>
