@@ -6,16 +6,10 @@ const Results = () => (
                     Scanned Codes
                 </h1>
                 <div id="scanned-codes" className="tags"></div>
-                <div className="subtitle">
-                    <a className="button is-rounded" onClick={removeAll()}>Remove All</a>
+                <div className="subtitle remove-all">
                 </div>
             </div>
         </div>
     </section>
 )
 export default Results
-
-function removeAll() {
-    codes = [];
-    $("#scanned-codess").empty();
-}

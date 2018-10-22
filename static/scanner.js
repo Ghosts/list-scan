@@ -1,5 +1,6 @@
 let codes = [];
 $(document).ready(function () {
+    $(".remove-all").append('<a class="button is-rounded" onClick="removeAll()">Remove All</a>');
     var liveStreamConfig = {
         inputStream: {
             name: "Live",
@@ -88,5 +89,5 @@ function removeCode(code) {
 
 function removeAll() {
     codes = [];
-    $("#scanned-codess").empty();
+    $("#scanned-codess").empty
 }
