@@ -6,7 +6,9 @@ $(document).ready(function () {
             name: "Live",
             type: "LiveStream",
             constraints: {
-                facingMode: "environment"
+                facingMode: "environment",
+                width: window.innerWidth,
+                height: window.innerHeight
             },
             target: document.querySelector('#barcode-scanner')
         },
@@ -61,8 +63,8 @@ $(document).ready(function () {
         let code = result.codeResult.code;
         if (result.codeResult.code && !$.inArray(code, codes)) {
             codes.push(code);
-            $("#scanned").append(`
-            <span class="tag is-success">
+            $("#scanned-codes").append(`
+            <span class="tag is-light">
             ${code}
             <button onClick="removeCode('${code}')" class="delete is-small"></button>
             </span>

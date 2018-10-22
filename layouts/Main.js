@@ -1,23 +1,19 @@
-import Scanner from '../components/Scanner'
+import Header from '../components/Header'
 import Head from 'next/head'
 
 const layoutStyle = {
     margin: 0,
     padding: 0,
-
 }
 
 const Layout = (props) => (
-    <div style={layoutStyle} className="columns">
+    <div>
     <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="/static/bulma.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="/static/bulma.min.css"/>
     </Head>
-        <div className="column">
-            <h1>List-Scan</h1>
-            <Scanner />
-            {props.children}
-        </div>
+        <Header/>
+        {props.children}
     </div>
 )
 

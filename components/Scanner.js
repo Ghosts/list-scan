@@ -6,26 +6,15 @@ const Scanner = () => (
             <script src='/static/quagga.min.js'></script>
             <script src='/static/scanner.js'></script>
         </Head>
-        <div>
-            <style jsx>
-            {`
-                .drawingBuffer {
-                    position: absolute;
-                    left: 0;
-                    }
-            `}
-            </style>
-            <div>
-                <div>
+        <section className="hero is-dark">
+            <div className="hero-body">
+                <div className="container">
                     <div id="barcode-scanner">
                     </div>
                 </div>
-                <div>
-                    <ul id="scanned">
-                    </ul>
-                </div>
             </div>
-        </div>
+        </section>
+        <ul id="scanned-codes"></ul>
     </div>
 )
 
