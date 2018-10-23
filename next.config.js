@@ -1,8 +1,7 @@
 module.exports = {
-    exportPathMap: function () {
-        return {
-          "/": { page: "/" },
-        }
-      },
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/{list-scan}' : '',
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' }
+    }
   }
+}
