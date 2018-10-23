@@ -27,11 +27,11 @@ class Results extends React.Component {
     removeAll() {
         this.scanned_codes.current.RemoveAll();
     }
-    
-    AddResult(result) {
-        this.scanned_codes.current.AddResult(result);
-    }
 
+    AddResult(result) {
+        const scanned_codesRef = this.scanned_codes.current;
+        scanned_codesRef.AddResult(result);
+    }
 }
 
 class ScannedCodes extends React.Component {
@@ -54,6 +54,7 @@ class ScannedCodes extends React.Component {
             window.navigator.vibrate(500);
         }
     }
+
     removeAll() {
         this.state.codes = [];
         const results = this.scanned_codes.curent;
@@ -61,7 +62,7 @@ class ScannedCodes extends React.Component {
             results.removeChild(results.lastChild);
         }
     }
-    
+
     removeCode(code) {
         var i = this.state.codes.indexOf(code);
         if (i != -1) {
@@ -79,7 +80,7 @@ class ScannedCodes extends React.Component {
                         return (
                             <span className={`tag is-light is-large ${code}`}>
                                 {code}
-                                <button onClick={removeCode(code)} className="delete"></button>
+                                <button onClick={this.removeCode(code)} className="delete"></button>
                             </span>
                         )
                     })

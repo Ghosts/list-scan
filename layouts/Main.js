@@ -5,18 +5,18 @@ import Footer from '../components/Footer'
 const Layout = (props) => (
     <div>
 
-    <style jsx global>{`
+        <style jsx>{`
       body { 
         overflow-x: hidden;
       }
     `}</style>
-    <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="/static/bulma.min.css"/>
-    </Head>
-        <Header/>
+        <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" type="text/css" href="/static/bulma.min.css" />
+        </Head>
+        <Header />
         {props.children}
-        <Footer/>
+        <Footer />
     </div>
 )
 

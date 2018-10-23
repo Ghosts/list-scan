@@ -53,8 +53,9 @@ class Scanner extends React.Component {
     }
 
     onDetected() {
+        const resultRef = this.results.current;
         Quagga.onDetected(function (result) {
-            this.results.current.AddResult(result);
+            resultRef.AddResult(result);
         });
     }
 
