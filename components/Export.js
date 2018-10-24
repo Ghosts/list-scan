@@ -18,7 +18,7 @@ class Export extends React.Component {
                         </h1>
                         <div className="buttons is-centered">
                             <CSVLink className="button is-warning is-rounded" data={this.props.codes} filename={`list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}.csv`}>Download CSV</CSVLink>
-                            <a href={`mailto:?subject=list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}&body=${this.props.codes.toString().split(',').join("<br/>")}`} className="button is-warning is-rounded">Email</a>
+                            <a href={`mailto:?subject=list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}&body=${this.props.codes.toString().split(',').join("%0D%0A")}`} className="button is-warning is-rounded">Email</a>
                         </div>
                     </div>
                 </div>
