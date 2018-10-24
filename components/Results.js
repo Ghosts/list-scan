@@ -27,11 +27,10 @@ class Results extends React.Component {
                                     ))
                                 }
                             </div>
-                            {this.props.codes.length == 0 ? "Scanned codes will show up here." :
-                                <div className="subtitle remove-all">
-                                    <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
-                                </div>
-                            }
+                            {this.props.codes.length == 0 ? "Scanned codes will show up here." : null}
+                            <div className="subtitle remove-all">
+                                <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
+                            </div>
                         </div>
                     </div>
                 </section>
