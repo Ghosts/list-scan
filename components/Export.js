@@ -4,6 +4,9 @@ class Export extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            mailto: `mailto:?subject=list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}&body=${this.props.codes.toString().split(',').join("<br/>")}`
+        }
     }
 
     render() {
@@ -16,16 +19,12 @@ class Export extends React.Component {
                         </h1>
                         <div className="buttons is-centered">
                             <CSVLink className="button is-warning is-rounded" data={this.props.codes} filename={`list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}.csv`}>Download CSV</CSVLink>
-                            <a href={this.getMailto()} className="button is-warning is-rounded">Email</a>
+                            <a href={this.state.mailto} className="button is-warning is-rounded">Email</a>
                         </div>
                     </div>
                 </div>
             </section>
         )
-    }
-
-    getMailto() {
-        return `mailto:?subject=list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}&body=${this.props.codes.toString().split(',').join("<br/>")}`
     }
 }
 export default Export
