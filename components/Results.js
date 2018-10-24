@@ -42,7 +42,7 @@ class Results extends React.Component {
 
     addResult(result) {
         let code = result.codeResult.code;
-        if (code && (codes.indexOf(code) === -1)) {
+        if (code && (this.props.codes.indexOf(code) === -1)) {
             let new_codes = this.props.codes;
             new_codes.push(code);
             this.setState({
