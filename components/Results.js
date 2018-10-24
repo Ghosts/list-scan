@@ -21,12 +21,10 @@ class Results extends React.Component {
                         <div className="tags" ref={this.scanned_codes}>
                             {
                                 this.state.codes.map(function (code, idx) {
-                                    return (
-                                        <span className={`tag is-light is-large ${code}`}>
-                                            {code}
-                                            <button onClick={this.removeCode(code)} className="delete"></button>
-                                        </span>
-                                    )
+                                    <span className={`tag is-light is-large ${code}`}>
+                                        {code}
+                                        <button onClick={this.removeCode(code)} className="delete"></button>
+                                    </span>
                                 })
                             }
                         </div>
@@ -38,6 +36,7 @@ class Results extends React.Component {
             </section>
         )
     }
+
     AddResult(result) {
         let code = result.codeResult.code;
         if (code && ($.inArray(code, this.state.codes) === -1)) {
