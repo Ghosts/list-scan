@@ -16,6 +16,7 @@ class Export extends React.Component {
                     <div className="container">
                         <h1 className="title has-text-centered is-bold">
                             Export
+                            <div>Scanned: {this.props.codes}</div>
                         </h1>
                         <div className="buttons is-centered">
                             <CSVLink className="button is-warning is-rounded" data={this.props.codes} filename={`list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}.csv`}>Download CSV</CSVLink>
