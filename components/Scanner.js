@@ -14,9 +14,9 @@ class Scanner extends React.Component {
                 <script src='/static/jquery.js'></script>
                 <link rel="stylesheet" type="text/css" href="/static/scanner.css" />
             </Head>
-            <section className="hero is-light is-bold max-height is-fullhd ">
+            <div className="container is-light is-bold is-fullhd ">
                 <div id="barcode-scanner" className="viewport max-height"></div>
-            </section>
+            </div>
             <Results ref={this.results} codes={this.props.codes} />
         </div>
         )
@@ -49,7 +49,7 @@ class Scanner extends React.Component {
     }
 
     onDetected() {
-        const resultRef = this.props.results;
+        const resultRef = this.results.current
         Quagga.onDetected(function (result) {
             resultRef.addResult(result);
         });
