@@ -34,9 +34,7 @@ class Results extends React.Component {
         )
     }
 
-
-    
-    AddResult(result) {
+    addResult(result) {
         let code = result.codeResult.code;
         if (code && ($.inArray(code, this.props.codes) === -1)) {
             let new_codes = this.props.codes;

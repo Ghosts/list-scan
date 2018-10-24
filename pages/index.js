@@ -16,7 +16,7 @@ class Index extends React.Component {
     render() {
         return (
             <Main>
-                <Scanner results={this.results} />
+                <Scanner results={ref => (this.results = ref)} />
                 <Results ref={this.results} codes={this.state.codes} />
                 <Export codes={this.state.codes} />
             </Main>
