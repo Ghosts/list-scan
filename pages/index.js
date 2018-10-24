@@ -11,11 +11,11 @@ class Index extends React.Component {
             codes: []
         }
     }
-    
+
     render() {
         return (
             <Main>
-                <Scanner codes = {this.state.codes} />
+                <Scanner codes={this.state.codes} />
                 <Export codes={this.state.codes} />
             </Main>
         )
