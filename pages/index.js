@@ -1,7 +1,6 @@
 import React from 'react'
 import Main from '../layouts/Main'
 import Scanner from '../components/Scanner'
-import Export from '../components/Export'
 
 class Index extends React.Component {
     constructor(props) {

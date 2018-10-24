@@ -1,4 +1,5 @@
 import React from 'react'
+import Export from '../components/Export'
 
 class Results extends React.Component {
 
