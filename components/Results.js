@@ -29,7 +29,7 @@ class Results extends React.Component {
                             }
                         </div>
                         <div className="subtitle remove-all">
-                            <button className="button is-light is-rounded" onClick={this.removeAll}>Remove All</button>
+                            <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
                         </div>
                     </div>
                 </div>
