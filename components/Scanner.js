@@ -6,6 +6,9 @@ class Scanner extends React.Component {
     constructor(props) {
         super(props)
         this.results = React.createRef();
+        this.state = {
+            codes: []
+        }
     }
 
     render() {
@@ -15,7 +18,7 @@ class Scanner extends React.Component {
                 <link rel="stylesheet" type="text/css" href="/static/scanner.css" />
             </Head>
             <div id="barcode-scanner" className="viewport is-small"></div>
-            <Results ref={this.results} codes={this.props.codes} />
+            <Results ref={this.results} codes={this.state.codes} />
         </div>
         )
     }

@@ -4,17 +4,13 @@ import Scanner from '../components/Scanner'
 
 class Index extends React.Component {
     constructor(props) {
-        super()
-        this.results = React.createRef()
-        this.state = {
-            codes: []
-        }
+        super(props)
     }
 
     render() {
         return (
             <Main>
-                <Scanner codes={this.state.codes} />
+                <Scanner/>
             </Main>
         )
     }

@@ -4,7 +4,7 @@ import Export from '../components/Export'
 class Results extends React.Component {
 
     constructor(props) {
-        super()
+        super(props)
         this.scanned_codes = React.createRef()
     }
 
