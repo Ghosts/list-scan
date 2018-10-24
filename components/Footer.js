@@ -24,6 +24,7 @@ const Footer = () => (
                 </h4>
             </div>
         </div>
+        
         <style jsx>{`
         a, svg {
             display: block;

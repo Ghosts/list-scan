@@ -14,7 +14,7 @@ class Results extends React.Component {
         return (
             <section className="hero is-info">
                 <div className="hero-body">
-                    <div className="container">
+                    <div className="container has-text-centered">
                         <h1 className="title">
                             Scanned Codes
                         </h1>
