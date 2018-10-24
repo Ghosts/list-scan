@@ -18,17 +18,17 @@ class Results extends React.Component {
                         <div className="tags" ref={this.scanned_codes}>
                             {
                                 this.props.codes.map((code) => (
-                                        <span className={`tag is-light is-large ${code}`}>
-                                            {code}
-                                            <button onClick={this.removeCode.bind(this, code)} className="delete"></button>
-                                        </span>
-                                    ))
+                                    <span className={`tag is-light is-large ${code}`}>
+                                        {code}
+                                        <button onClick={this.removeCode.bind(this, code)} className="delete"></button>
+                                    </span>
+                                ))
                             }
                         </div>
-                        {this.props.codes.length == 0 ? "Scanned Codes will show up here." : 
-                        <div className="subtitle remove-all">
-                            <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
-                        </div>
+                        {this.props.codes.length == 0 ? "Scanned Codes will show up here." :
+                            <div className="subtitle remove-all">
+                                <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
+                            </div>
                         }
                     </div>
                 </div>

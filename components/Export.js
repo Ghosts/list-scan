@@ -1,11 +1,10 @@
-import { CSVLink, CSVDownload } from "react-csv"
+import { CSVLink} from "react-csv"
 
 class Export extends React.Component {
 
     constructor(props) {
         super(props)
     }
-
 
     render() {
         return (
