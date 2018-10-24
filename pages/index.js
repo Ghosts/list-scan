@@ -6,15 +6,6 @@ class Index extends React.Component {
     constructor(props) {
         super(props)
     }
-    
-    componentDidMount = () => {
-        if("serviceWorker" in navigator) {
-            navigator.serviceWorker.register('/static/sw.js').catch(err => console.error('Service worker registration failed', err))
-        } else {
-            console.log('Service worker not supported');
-        }
-    }
-    
 
     render() {
         return (
@@ -25,7 +16,14 @@ class Index extends React.Component {
         )
     }
 
-
+    componentDidMount = () => {
+        if("serviceWorker" in navigator) {
+            navigator.serviceWorker.register('/static/sw.js').catch(err => console.error('Service worker registration failed', err))
+        } else {
+            console.log('Service worker not supported');
+        }
+    }
+    
 }
 
 export default Index
