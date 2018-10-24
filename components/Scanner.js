@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import Quagga from 'quagga'
-import Results from './Results'
 
 class Scanner extends React.Component {
     constructor(props) {
         super(props);
-        this.results = React.createRef();
     }
 
     render() {
@@ -21,7 +19,6 @@ class Scanner extends React.Component {
                     </div>
                 </div>
             </section>
-            <Results ref={this.results} />
         </div>
         )
     }
@@ -53,7 +50,7 @@ class Scanner extends React.Component {
     }
 
     onDetected() {
-        const resultRef = this.results.current;
+        const resultRef = this.props.results.current;
         Quagga.onDetected(function (result) {
             resultRef.AddResult(result);
         });

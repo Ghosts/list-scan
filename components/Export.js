@@ -1,8 +1,12 @@
+import { CSVLink, CSVDownload } from "react-csv"
+
 class Export extends React.Component {
 
     constructor(props) {
         super(props)
     }
+
+    mailtoLink = `mailto:?subject=list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}&body=${this.props.codes.toString().split(',').join("<br/>")}`
 
     render() {
         return (
@@ -13,21 +17,13 @@ class Export extends React.Component {
                             Export
                         </h1>
                         <div className="buttons is-centered">
-                            <button className="button is-warning is-rounded" onClick={this.export.bind(this)}>Download CSV</button>
-                            <button className="button is-warning is-rounded" onClick={this.email.bind(this)}>Email</button>
+                            <CSVLink className="button is-warning is-rounded" data={this.props.codes} filename={`list-scan-${new Date().toLocaleDateString().replace(/\//g, '-')}.csv`}>Download CSV</CSVLink>
+                            <a href={`${this.mailtoLink}`} className="button is-warning is-rounded">Email</a>
                         </div>
                     </div>
                 </div>
             </section>
         )
-    }
-
-    email() {
-        alert('email!')
-    }
-
-    export() {
-        alert('export!')
     }
 }
 export default Export

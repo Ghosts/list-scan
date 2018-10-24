@@ -4,9 +4,6 @@ class Results extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            codes: []
-        }
         this.scanned_codes = React.createRef()
     }
 
@@ -20,7 +17,7 @@ class Results extends React.Component {
                         </h1>
                         <div className="tags" ref={this.scanned_codes}>
                             {
-                                this.state.codes.map((code) => (
+                                this.props.codes.map((code) => (
                                         <span className={`tag is-light is-large ${code}`}>
                                             {code}
                                             <button onClick={this.removeCode.bind(this, code)} className="delete"></button>
@@ -41,8 +38,8 @@ class Results extends React.Component {
     
     AddResult(result) {
         let code = result.codeResult.code;
-        if (code && ($.inArray(code, this.state.codes) === -1)) {
-            let new_codes = this.state.codes;
+        if (code && ($.inArray(code, this.props.codes) === -1)) {
+            let new_codes = this.props.codes;
             new_codes.push(code);
             this.setState({
                 codes: new_codes
@@ -69,6 +66,5 @@ class Results extends React.Component {
     }
 
 }
-
 
 export default Results

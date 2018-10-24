@@ -4,7 +4,6 @@ import Footer from '../components/Footer'
 
 const Layout = (props) => (
     <div>
-
         <style jsx>{`
       body { 
         overflow-x: hidden;

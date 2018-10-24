@@ -3,8 +3,8 @@
   "author": "ghosts",
   "version": "1.0.0",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/npm/cli.git"
+    "type": "git",
+    "url": "https://github.com/npm/cli.git"
   },
   "scripts": {
     "dev": "next",
@@ -17,6 +17,7 @@
     "next": "^7.0.2",
     "quagga": "^0.12.1",
     "react": "^16.5.2",
+    "react-csv": "^1.0.18",
     "react-dom": "^16.5.2"
   }
 }
