@@ -6,7 +6,7 @@ import Export from '../components/Export'
 
 class Index extends React.Component {
     constructor(props) {
-        super(props)
+        super()
         this.results = React.createRef()
         this.state = {
             codes: []

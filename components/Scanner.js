@@ -3,7 +3,7 @@ import Quagga from 'quagga'
 
 class Scanner extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     render() {
@@ -15,7 +15,7 @@ class Scanner extends React.Component {
             <section className="hero is-light is-bold max-height">
                 <div className="hero-body">
                     <div className="container">
-                        <div id="barcode-scanner" className="viewport"></div>
+                        <div id="barcode-scanner" className="viewport max-height is-fullhd has-text-centered">Please attach a camera or allow the browser to access your device's camera.</div>
                     </div>
                 </div>
             </section>
