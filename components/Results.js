@@ -61,7 +61,8 @@ class Results extends React.Component {
 
     removeCode(code) {
         let new_codes = this.props.codes;
-        if (new_codes.indexOf(code) != -1) {
+        var i = new_codes.indexOf(code);
+        if (i != -1) {
             new_codes.splice(i, 1);
         }
         this.setState({
