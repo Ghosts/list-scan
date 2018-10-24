@@ -52,10 +52,6 @@ class Results extends React.Component {
     }
 
     removeAll() {
-        const results = this.scanned_codes.curent;
-        while (results.hasChildNodes()) {
-            results.removeChild(results.lastChild);
-        }
         this.setState({
             codes: []
         });
@@ -70,7 +66,6 @@ class Results extends React.Component {
         this.setState({
             codes: new_codes
         });
-        document.querySelector(`.${code}`).remove();
     }
 
 }
