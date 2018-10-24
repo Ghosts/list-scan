@@ -16,7 +16,6 @@ class Index extends React.Component {
         return (
             <Main>
                 <Scanner codes={this.state.codes} />
-                <Export codes={this.state.codes} />
             </Main>
         )
     }

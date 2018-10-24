@@ -9,30 +9,33 @@ class Results extends React.Component {
 
     render() {
         return (
-            <section className="hero is-info is-bold">
-                <div className="hero-body">
-                    <div className="container has-text-centered">
-                        <h1 className="title">
-                            Scanned Codes
+            <div>
+                <section className="hero is-info is-bold">
+                    <div className="hero-body">
+                        <div className="container has-text-centered">
+                            <h1 className="title">
+                                Scanned Codes
                         </h1>
-                        <div className="tags" ref={this.scanned_codes}>
-                            {
-                                this.props.codes.map((code) => (
-                                    <span className={`tag is-light is-large ${code}`}>
-                                        {code}
-                                        <button onClick={this.removeCode.bind(this, code)} className="delete"></button>
-                                    </span>
-                                ))
+                            <div className="tags" ref={this.scanned_codes}>
+                                {
+                                    this.props.codes.map((code) => (
+                                        <span className={`tag is-light is-large ${code}`}>
+                                            {code}
+                                            <button onClick={this.removeCode.bind(this, code)} className="delete"></button>
+                                        </span>
+                                    ))
+                                }
+                            </div>
+                            {this.props.codes.length == 0 ? "Scanned Codes will show up here." :
+                                <div className="subtitle remove-all">
+                                    <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
+                                </div>
                             }
                         </div>
-                        {this.props.codes.length == 0 ? "Scanned Codes will show up here." :
-                            <div className="subtitle remove-all">
-                                <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
-                            </div>
-                        }
                     </div>
-                </div>
-            </section>
+                </section>
+                <Export codes={this.props.codes} />
+            </div>
         )
     }
 
@@ -50,7 +53,7 @@ class Results extends React.Component {
 
     removeAll() {
         this.setState({
-            codes: []
+            codes: new []
         });
     }
 
