@@ -23,7 +23,7 @@ class Results extends React.Component {
                                 this.state.codes.map(function (code, idx) {
                                     <span className={`tag is-light is-large ${code}`}>
                                         {code}
-                                        <button onClick={this.removeCode(code)} className="delete"></button>
+                                        <button onClick={this.removeCode(code).bind(this)} className="delete"></button>
                                     </span>
                                 })
                             }
