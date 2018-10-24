@@ -16,7 +16,7 @@ class Results extends React.Component {
                         <div className="container has-text-centered">
                             <h1 className="title">
                                 Scanned Codes
-                        </h1>
+                            </h1>
                             <div className="tags" ref={this.scanned_codes}>
                                 {
                                     this.props.codes.map((code) => (
@@ -55,7 +55,7 @@ class Results extends React.Component {
     removeAll() {
         let new_codes = [];
         this.setState({
-            codes: new_codes;
+            codes: new_codes
         });
     }
 
