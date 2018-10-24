@@ -4,6 +4,9 @@ class Results extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            codes: []
+        }
         this.scanned_codes = React.createRef()
     }
 
@@ -15,7 +18,18 @@ class Results extends React.Component {
                         <h1 className="title">
                             Scanned Codes
                         </h1>
-                        <ScannedCodes id="scanned_codes" ref={this.scanned_codes} className="tags" />
+                        <div className="tags" ref={this.scanned_codes}>
+                            {
+                                this.state.codes.map(function (code, idx) {
+                                    return (
+                                        <span className={`tag is-light is-large ${code}`}>
+                                            {code}
+                                            <button onClick={this.removeCode(code)} className="delete"></button>
+                                        </span>
+                                    )
+                                })
+                            }
+                        </div>
                         <div className="subtitle remove-all">
                             <a className="button is-rounded" onClick={this.removeAll}>Remove All</a>
                         </div>
@@ -24,25 +38,6 @@ class Results extends React.Component {
             </section>
         )
     }
-    removeAll() {
-        this.scanned_codes.current.RemoveAll();
-    }
-
-    AddResult(result) {
-        const scanned_codesRef = this.scanned_codes.current;
-        scanned_codesRef.AddResult(result);
-    }
-}
-
-class ScannedCodes extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            codes: []
-        }
-    }
-
     AddResult(result) {
         let code = result.codeResult.code;
         if (code && ($.inArray(code, this.state.codes) === -1)) {
@@ -56,38 +51,27 @@ class ScannedCodes extends React.Component {
     }
 
     removeAll() {
-        this.state.codes = [];
         const results = this.scanned_codes.curent;
         while (results.hasChildNodes()) {
             results.removeChild(results.lastChild);
         }
+        this.setState({
+            codes: []
+        });
     }
 
     removeCode(code) {
-        var i = this.state.codes.indexOf(code);
+        let new_codes = this.state.codes;
+        var i = new_codes.indexOf(code);
         if (i != -1) {
-            this.state.codes.splice(i, 1);
+            new_codes.splice(i, 1);
         }
+        this.setState({
+            codes: new_codes
+        });
         document.querySelector(`.${code}`).remove();
     }
 
-    render() {
-        const codes = this.state.codes;
-        return (
-            <div>
-                {
-                    codes.map(function (code, idx) {
-                        return (
-                            <span className={`tag is-light is-large ${code}`}>
-                                {code}
-                                <button onClick={this.removeCode(code)} className="delete"></button>
-                            </span>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
 }
 
 
