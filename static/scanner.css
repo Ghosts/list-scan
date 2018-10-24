@@ -58,6 +58,7 @@ canvas.drawing, canvas.drawingBuffer {
 
 #barcode-scanner.viewport {
     position: relative;
+    height: 250px;
 }
 
 #barcode-scanner.viewport > canvas, #barcode-scanner.viewport > video {

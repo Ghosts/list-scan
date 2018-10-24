@@ -14,7 +14,7 @@ class Scanner extends React.Component {
                 <script src='/static/jquery.js'></script>
                 <link rel="stylesheet" type="text/css" href="/static/scanner.css" />
             </Head>
-            <div id="barcode-scanner" className="viewport max-height"></div>
+            <div id="barcode-scanner" className="viewport is-small"></div>
             <Results ref={this.results} codes={this.props.codes} />
         </div>
         )
