@@ -1,5 +1,5 @@
 const Header = () => (
-    <section className="hero is-warning">
+    <section className="hero is-warning is-bold">
       <div className="hero-body">
         <div className="container">
           <h1 className="title">

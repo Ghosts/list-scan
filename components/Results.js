@@ -12,7 +12,7 @@ class Results extends React.Component {
 
     render() {
         return (
-            <section className="hero is-info">
+            <section className="hero is-info is-bold">
                 <div className="hero-body">
                     <div className="container has-text-centered">
                         <h1 className="title">
@@ -29,7 +29,7 @@ class Results extends React.Component {
                             }
                         </div>
                         <div className="subtitle remove-all">
-                            <a className="button is-rounded" onClick={this.removeAll}>Remove All</a>
+                            <button className="button is-light is-rounded" onClick={this.removeAll}>Remove All</button>
                         </div>
                     </div>
                 </div>
