@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Quagga from 'quagga'
+import Results from '../components/Results'
 
 class Scanner extends React.Component {
     constructor(props) {
         super(props)
+        this.results = React.createRef();
     }
 
     render() {
@@ -12,13 +14,10 @@ class Scanner extends React.Component {
                 <script src='/static/jquery.js'></script>
                 <link rel="stylesheet" type="text/css" href="/static/scanner.css" />
             </Head>
-            <section className="hero is-light is-bold max-height">
-                <div className="hero-body">
-                    <div className="container">
-                        <div id="barcode-scanner" className="viewport max-height is-fullhd has-text-centered">Please attach a camera or allow the browser to access your device's camera.</div>
-                    </div>
-                </div>
+            <section className="hero is-light is-bold max-height is-fullhd ">
+                <div id="barcode-scanner" className="viewport max-height"></div>
             </section>
+            <Results ref={this.results} codes={this.props.codes} />
         </div>
         )
     }

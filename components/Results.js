@@ -25,7 +25,8 @@ class Results extends React.Component {
                                     ))
                             }
                         </div>
-                        {this.props.codes.length == 0 ? "Scanned Codes will show up here" :<div className="subtitle remove-all">
+                        {this.props.codes.length == 0 ? "Scanned Codes will show up here." : 
+                        <div className="subtitle remove-all">
                             <button className="button is-light is-rounded" onClick={this.removeAll.bind(this)}>Remove All</button>
                         </div>
                         }

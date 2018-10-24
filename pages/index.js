@@ -1,7 +1,6 @@
 import React from 'react'
 import Main from '../layouts/Main'
 import Scanner from '../components/Scanner'
-import Results from '../components/Results'
 import Export from '../components/Export'
 
 class Index extends React.Component {
@@ -16,8 +15,7 @@ class Index extends React.Component {
     render() {
         return (
             <Main>
-                <Scanner results={this.results.current} />
-                <Results ref={this.results} codes={this.state.codes} />
+                <Scanner codes = {this.state.codes} />
                 <Export codes={this.state.codes} />
             </Main>
         )
