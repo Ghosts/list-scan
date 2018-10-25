@@ -18,6 +18,7 @@ const Layout = (props) => (
             <meta name="author" content="Caden Sumner"/>
             <meta name="theme-color" content="#FFDD57"/>
             <link rel="manifest" href="/static/manifest.json" />
+            <link rel="icon" href="/static/images/icons/favicon.ico">
             <link rel="stylesheet" type="text/css" href="/static/bulma.min.css" />
         </Head>
         <Header />
