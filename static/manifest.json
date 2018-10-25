@@ -3,7 +3,7 @@
     "short_name": "List-Scan",
     "theme_color": "#ffdd57",
     "background_color": "#ffdd57",
-    "display": "fullscreen",
+    "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
