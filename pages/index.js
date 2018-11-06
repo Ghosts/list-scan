@@ -8,22 +8,28 @@ class Index extends React.Component {
     }
 
     render() {
-        return (
+        return ( 
             <Main>
-                <noscript>Your browser does not support JavaScript. Please enable JavaScript or use a different browser.</noscript>
-                <Scanner/>
+            <noscript> Your browser does not support JavaScript.Please enable JavaScript or use a different browser. </noscript> 
+            <Scanner/>
             </Main>
         )
     }
 
     componentDidMount = () => {
-        if("serviceWorker" in navigator) {
-            navigator.serviceWorker.register('/static/sw.js').catch(err => console.error('Service worker registration failed', err))
+        //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+        if (navigator.serviceWorker.controller) {
+            console.log('[PWA Builder] active service worker found, no need to register')
         } else {
-            console.log('Service worker not supported');
+            //Register the ServiceWorker
+            navigator.serviceWorker.register('/static/sw.js', {
+                scope: './'
+            }).then(function (reg) {
+                console.log('Service worker has been registered for scope:' + reg.scope);
+            });
         }
     }
-    
+
 }
 
 export default Index

@@ -13,8 +13,8 @@ const Layout = (props) => (
         <Head>
             <title>List-Scan</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="author" content="Caden Sumner"/>
             <meta name="theme-color" content="#FFDD57"/>
             <link rel="manifest" href="/static/manifest.json" />
